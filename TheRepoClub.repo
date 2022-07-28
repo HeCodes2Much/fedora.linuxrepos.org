@@ -1,0 +1,6 @@
+[therepoclub]
+name=The Repo Club
+baseurl=https://fedora.therepo.club/packages
+enabled=1
+gpgcheck=1
+gpgkey=https://fedora.therepo.club/pgp-key.public
