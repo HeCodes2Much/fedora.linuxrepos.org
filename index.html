@@ -14,7 +14,7 @@
   }
 
   var allRepos = [];
-  $.getJSON( "https://arch.therepo.club/packages.json", function( data ) {
+  $.getJSON( "https://fedora.therepo.club/packages.json", function( data ) {
     $.each( data, function( key, val ) {
       allRepos.push( val );
     });
@@ -41,7 +41,7 @@
         for(var key in allRepos){
           value = allRepos[key]
           if(value.search(keyword) > -1 ) {
-            fetch('https://arch.therepo.club/json/' + value + '.json')
+            fetch('https://fedora.therepo.club/json/' + value + '.json')
               .then(response => response.json())
               .then(data => {
                 // do something with your data
@@ -95,7 +95,7 @@
       this.echo('[[b;;]Paste the text below into your /etc/pacman.conf file]')
       this.echo('[therepoclub]')
       this.echo('SigLevel = Required DatabaseOptional')
-      this.echo('Server = https://arch.therepo.club/$arch/')
+      this.echo('Server = https://fedora.therepo.club/$arch/')
 
     },
     credits: function() {
