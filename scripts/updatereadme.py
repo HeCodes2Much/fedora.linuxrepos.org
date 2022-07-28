@@ -8,9 +8,9 @@ from parse_pacman import parse_pacman
 
 def filebrowser(ext=""):
     "Returns files with an extension"
-    return [file for file in glob.glob(f"../x86_64/*{ext}")]
+    return [file for file in glob.glob(f"../packages/*{ext}")]
 
-files = filebrowser(".pkg.tar.zst")
+files = filebrowser("x86_64.rpm")
 
 files.sort()
 
