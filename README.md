@@ -1,2 +1,2 @@
-# Fedora.TheRepo.Club
-Fedora Repo 
+# Fedora.linuxrepos.org
+Fedora Repo

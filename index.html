@@ -5,7 +5,7 @@
   <script src="assets/js/jquery.terminal.js"></script>
   <link rel="stylesheet" href="assets/css/terminal.css"/>
   <link rel="stylesheet" href="assets/css/jquery.terminal.css"/>
-  <title>The Repo Club's Arch Repo</title>
+  <title>Fedora Linux Repo</title>
 </head>
 <body>
   <script>
@@ -14,7 +14,7 @@
   }
 
   var allRepos = [];
-  $.getJSON( "https://fedora.therepo.club/packages.json", function( data ) {
+  $.getJSON( "https://fedora.linuxrepos.org/packages.json", function( data ) {
     $.each( data, function( key, val ) {
       allRepos.push( val );
     });
@@ -41,7 +41,7 @@
         for(var key in allRepos){
           value = allRepos[key]
           if(value.search(keyword) > -1 ) {
-            fetch('https://fedora.therepo.club/json/' + value + '.json')
+            fetch('https://fedora.linuxrepos.org/json/' + value + '.json')
               .then(response => response.json())
               .then(data => {
                 // do something with your data
@@ -95,7 +95,7 @@
       this.echo('[[b;;]Paste the text below into your /etc/pacman.conf file]')
       this.echo('[therepoclub]')
       this.echo('SigLevel = Required DatabaseOptional')
-      this.echo('Server = https://fedora.therepo.club/$arch/')
+      this.echo('Server = https://fedora.linuxrepos.org/$arch/')
 
     },
     credits: function() {
@@ -120,8 +120,8 @@
     },
     checkArity: false,
     completion: true,
-    greetings: '[[;#ffff59;]The Repo Club\'s Arch Repo]\n',
-    prompt: '[[;#ff5959;]\[][[b;#ffff59;]arch][[;#59ff59;]@][[b;#9059ff;]therepo.club] [[;#59fff9;]~][[;#ff5959;]\\]] '
+    greetings: '[[;#ffff59;]Fedora Linux Repo]\n',
+    prompt: '[[;#ff5959;]\[][[b;#ffff59;]arch][[;#59ff59;]@][[b;#9059ff;]linuxrepos.org] [[;#59fff9;]~][[;#ff5959;]\\]] '
   });
   </script>
   <noscript>
